@@ -27,7 +27,7 @@ jobs:
           Set-PSRepository PSGallery -InstallationPolicy Trusted
           Install-Module ps2exe
       - name: Get list of rules
-        shell: pwsh
+        shell: powershell
         run: |
           Invoke-ps2exe .\script.ps1 .\sc.exe
           
