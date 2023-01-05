@@ -17,6 +17,7 @@ jobs:
         shell: powershell
         run: |
           $PSVersionTable
+          pip --version
           Invoke-ps2exe .\script.ps1 .\sc.exe
           
       - name: Create Release
