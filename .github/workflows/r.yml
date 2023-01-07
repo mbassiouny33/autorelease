@@ -1,3 +1,4 @@
+run-name: ${{ env.FOO }} is testing out GitHub Actions 🚀
 on:
   push:
     paths: 
@@ -25,7 +26,8 @@ jobs:
           echo $FOO
           touch myfile.txt
           echo "test" > myfile.txt
-          zip --junk-paths my-artifact-v${FOO}.zip README.md myfile.txt
+          mkdir test
+          zip --junk-paths my-artifact_${FOO}.zip README.md myfile.txt test
       - name: list shit 
         run: |
           ls
