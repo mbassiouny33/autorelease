@@ -24,9 +24,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./bin/azblogfilter.windows-amd64.zip
-          asset_name: azblogfilter.windows-amd64.zip
+          upload_url: "url"
+          asset_path: ./sc.exe
+          asset_name: sc_latest.zip
           asset_content_type: application/zip    
       - name: Create Release
         id: create_release
