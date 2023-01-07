@@ -25,7 +25,7 @@ jobs:
           echo $FOO
           touch myfile.txt
           echo "test" > myfile.txt
-          zip --junk-paths my-artifact-v${FOO} README.md myfile.txt
+          zip --junk-paths my-artifact-v${FOO}.zip README.md myfile.txt
       - name: list shit 
         run: |
           ls
@@ -48,6 +48,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-          asset_path: ./my-artifact-v${{env.FOO}}.zip
-          asset_name: my-artifact-v${{env.FOO}}.zip
+          asset_path: ./my-artifact-${{env.FOO}}.zip
+          asset_name: my-artifact-${{env.FOO}}.zip
           asset_content_type: application/zip
