@@ -43,7 +43,7 @@ jobs:
           touch myfile.txt
           echo "test" > myfile.txt
           mkdir test
-          zip --junk-paths my-artifact_${FOO}.zip README.md myfile.txt test
+          zip my-artifact_${FOO}.zip README.md myfile.txt test
       - name: list shit 
         run: |
           ls
