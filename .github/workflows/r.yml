@@ -13,13 +13,15 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Build project # This would actually build your project, using zip for an example artifact
+      - name: add env var # This would actually build your project, using zip for an example artifact
         run: |
           cat .github/r.env >> $GITHUB_ENV
+      - name: Build project # This would actually build your project, using zip for an example artifact
+        run: |
           echo $FOO
           touch myfile.txt
           echo "test" > myfile.txt
-          zip --junk-paths my-artifact-v$FOO README.md myfile.txt
+          zip --junk-paths my-artifact-v${FOO} README.md myfile.txt
       - name: list shit 
         run: |
           ls
