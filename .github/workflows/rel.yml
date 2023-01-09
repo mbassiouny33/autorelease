@@ -17,8 +17,8 @@ jobs:
           conda --version
           pip --version
 
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        with:
-          tag_name: v1222
-          files: Release.txt
+      #- name: Release
+       # uses: softprops/action-gh-release@v1
+        #with:
+         # tag_name: v1222
+          #files: Release.txt
