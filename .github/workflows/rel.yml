@@ -4,16 +4,16 @@ on: push
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Build
-        run: echo ${{ github.sha }} > Release.txt
+        run: echo lol > Release.txt
       - name: Test
         run: cat Release.txt
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: v122
+          tag_name: v1222
           files: Release.txt
