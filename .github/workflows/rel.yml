@@ -14,9 +14,22 @@ jobs:
         run: cat Release.txt
       - name: some python things
         run: |
-          conda --version
           pip --version
-
+      - name: Display Python versionBefore
+        run: python -c "import sys; print(sys.version)"
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v4
+        with:
+          # Semantic version range syntax or exact version of a Python version
+          python-version: '3.9'
+          # Optional - x64 or x86 architecture, defaults to x64
+          architecture: 'x86'
+        # You can test your matrix by printing the current Python version
+      - name: Display Python versionAFter
+        run: python -c "import sys; print(sys.version)"
+      - name: some python things after
+        run: |
+          pip --version
       #- name: Release
        # uses: softprops/action-gh-release@v1
         #with:
