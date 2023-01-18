@@ -31,7 +31,9 @@ jobs:
         run: |
           pip --version
           pip install  PyQt5 pyqt5-tools
-          ls C:\hostedtoolcache\windows\Python\3.9.13\x86\lib\site-packages
+          Set-Alias -Name lrelease  -value C:\hostedtoolcache\windows\Python\3.9.13\x86\lib\site-packages\qt5_applications\Qt\bin\lrelease.exe
+          lrelease -version
+          
       #- name: Release
        # uses: softprops/action-gh-release@v1
         #with:
