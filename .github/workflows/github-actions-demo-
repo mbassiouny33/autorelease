@@ -7,18 +7,24 @@ jobs:
     name: Run PSScriptAnalyzer on Windows
     runs-on: windows-latest
     steps:
+      - name: Set up Python x86
+        uses: actions/setup-python@v4
+        with:
+          # Semantic version range syntax or exact version of a Python version
+          python-version: '3.9'
+          # Optional - x64 or x86 architecture, defaults to x64
+          architecture: 'x86'
       - uses: actions/checkout@v3
       - name: Install PSScriptAnalyzer module
         shell: powershell
         run: |
-          Set-PSRepository PSGallery -InstallationPolicy Trusted
-          Install-Module ps2exe
+          echo "hi"
       - name: Get list of rules
         shell: powershell
         run: |
           $PSVersionTable
           pip --version
-          Invoke-ps2exe .\script.ps1 .\sc.exe
+          ls C:\hostedtoolcache\windows\Python\3.9.13\x86\lib\site-packages
       - name: upload windows artifact
         uses: actions/upload-release-asset@v1
         env:
