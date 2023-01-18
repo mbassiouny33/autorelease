@@ -24,7 +24,7 @@ jobs:
         run: |
           $PSVersionTable
           pip --version
-          ls C:\hostedtoolcache\windows\Python\3.9.13\x86\lib\site-packages
+          C:\hostedtoolcache\windows\Python\3.9.13\x86\lib\site-packages\qt5_applications\Qt\bin\lrelease.exe -version
       - name: upload windows artifact
         uses: actions/upload-release-asset@v1
         env:
